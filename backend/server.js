@@ -58,6 +58,30 @@ app.get('/s_skill', (req, res) => {
         });
 });
 
+app.get('/s_archivement', (req, res) => {
+    const sql = 'SELECT * FROM s_archivement';
+    promisePool.query(sql)
+        .then(([rows, fields]) => {
+            return res.json(rows);
+        })
+        .catch((err) => {
+            console.error('Error executing query:', err);
+            return res.json(err); // Send a user-friendly error message
+        });
+});
+app.get('/s_traning', (req, res) => {
+    const sql = 'SELECT * FROM s_traning';
+    promisePool.query(sql)
+        .then(([rows, fields]) => {
+            return res.json(rows);
+        })
+        .catch((err) => {
+            console.error('Error executing query:', err);
+            return res.json(err); // Send a user-friendly error message
+        });
+});
+
+
 app.get('/profile', (req, res) => {
     const sql = 'SELECT * FROM profile';
     promisePool.query(sql)
