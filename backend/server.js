@@ -7,7 +7,7 @@ app.use(cors());
 
 const pool = mysql.createPool({
     host: 'localhost',
-    port: 3307, // Updated port number
+    port: 3306, // Updated port number         
     user: 'root',
     password: '', // Empty string for no password
     database: 'student_dashboard',
@@ -69,8 +69,9 @@ app.get('/s_archivement', (req, res) => {
             return res.json(err); // Send a user-friendly error message
         });
 });
-app.get('/s_traning', (req, res) => {
-    const sql = 'SELECT * FROM s_traning';
+
+app.get('/training_status', (req, res) => {
+    const sql = 'SELECT * FROM training_status';
     promisePool.query(sql)
         .then(([rows, fields]) => {
             return res.json(rows);
