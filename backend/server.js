@@ -19,7 +19,7 @@ const pool = mysql.createPool({
 const promisePool = pool.promise(); // Create a promise-based pool
 
 app.get('/', (req, res) => {
-    return res.json('vanakam pa na tha naveenu');
+    return res.json('Sucessfully Executed');
 });
 
 app.get('/students', (req, res) => {
