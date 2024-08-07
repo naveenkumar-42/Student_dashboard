@@ -42,7 +42,7 @@ app.get('/sem', (req, res) => {
         })
         .catch((err) => {
             console.error('Error executing query:', err);
-            return res.json(err); // Send a user-friendly error message
+            return res.json(err);
         });
 });
 
@@ -54,7 +54,7 @@ app.get('/s_skill', (req, res) => {
         })
         .catch((err) => {
             console.error('Error executing query:', err);
-            return res.json(err); // Send a user-friendly error message
+            return res.json(err); 
         });
 });
 
@@ -66,7 +66,7 @@ app.get('/s_archivement', (req, res) => {
         })
         .catch((err) => {
             console.error('Error executing query:', err);
-            return res.json(err); // Send a user-friendly error message
+            return res.json(err); 
         });
 });
 
@@ -78,7 +78,7 @@ app.get('/training_status', (req, res) => {
         })
         .catch((err) => {
             console.error('Error executing query:', err);
-            return res.json(err); // Send a user-friendly error message
+            return res.json(err); 
         });
 });
 
@@ -88,7 +88,7 @@ app.get('/profile', (req, res) => {
     promisePool.query(sql)
         .then(([rows, fields]) => {
             rows.forEach((row) => {
-                row.image = row.image.toString('base64'); // Convert Buffer to base64 string
+                row.image = row.image.toString('base64'); 
             });
             return res.json(rows);
         })
