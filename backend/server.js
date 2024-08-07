@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql2'); // Updated import for mysql2
+const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
@@ -7,16 +7,16 @@ app.use(cors());
 
 const pool = mysql.createPool({
     host: 'localhost',
-    port: 3306, // Updated port number         
+    port: 3306,         
     user: 'root',
-    password: '', // Empty string for no password
+    password: '', 
     database: 'student_dashboard',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
 });
 
-const promisePool = pool.promise(); // Create a promise-based pool
+const promisePool = pool.promise(); 
 
 app.get('/', (req, res) => {
     return res.json('Sucessfully Executed');
@@ -30,7 +30,7 @@ app.get('/students', (req, res) => {
         })
         .catch((err) => {
             console.error('Error executing query:', err);
-            return res.json(err); // Send a user-friendly error message
+            return res.json(err); 
         });
 });
 
